@@ -1,13 +1,17 @@
 class Solution {
     public int countDigitOccurrences(int[] nums, int digit) {
-        int count = 0;
+        ArrayList<Integer> list = new ArrayList<>();
         for(int n : nums){
             while(n!=0){
                 int r = n%10;
-                if(r== digit){
-                    count++;
-                }
+                list.add(r);
                 n /= 10;
+            }
+        }
+        int count = 0;
+        for(int i : list){
+            if(i == digit){
+                count++;
             }
         }
         return count;
